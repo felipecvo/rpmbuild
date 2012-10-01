@@ -1,5 +1,5 @@
-%define rubyver         1.9.2
-%define rubyminorver    p320
+%define rubyver         1.9.3
+%define rubyminorver    p194
 
 Name:           ruby
 Version:        %{rubyver}%{rubyminorver}
@@ -7,7 +7,8 @@ Release:        1%{?dist}
 License:        Ruby License/GPL - see COPYING
 URL:            http://www.ruby-lang.org/
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires:  readline readline-devel ncurses ncurses-devel gdbm gdbm-devel glibc-devel tcl-devel gcc unzip openssl-devel db4-devel byacc make
+BuildRequires:  readline readline-devel ncurses ncurses-devel gdbm gdbm-devel glibc-devel
+BuildRequires:  libyaml-devel tcl-devel gcc unzip openssl-devel db4-devel byacc make
 Source0:        ftp://ftp.ruby-lang.org/pub/ruby/ruby-%{rubyver}-%{rubyminorver}.tar.gz
 Summary:        An interpreter of object-oriented scripting language
 Group:          Development/Languages
@@ -64,10 +65,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}
 
 %changelog
+* Mon Aug 13 2012 Felipe Oliveira <felipe.cvo@gmail.com> - 1.9.3-p194
+* Update ruby version to 1.9.3-p194
+
 * Thu May 3 2012 Eric Shamow <eric@puppetlabs.com> - 1.9.2-p320
 - Update ruby version to 1.9.2-p320
+
 * Mon Aug 29 2011 Gregory Graf <graf.gregory@gmail.com> - 1.9.2-p290
 - Update ruby version to 1.9.2-p290
+
 * Sat Jun 25 2011 Ian Meyer <ianmmeyer@gmail.com> - 1.9.2-p180-2
 - Remove non-existant --sitearchdir and --vedorarchdir from %configure
 - Replace --sitedir --vendordir with simpler --libdir
